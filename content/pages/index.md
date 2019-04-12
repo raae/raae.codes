@@ -27,11 +27,11 @@ The project is a plugin for GatsbyJS that lets you embed content from Twitter, C
 
 In 2019 I would like to get serious about speaking!
 
-I have spoken at several meetups and done two conference lightning talks in Oslo over the years, but I would like to get to become an international speaker and need practice. Lots of practice.
+I have spoken at several meetups and done two conference lightning talks in Oslo over the years. In 2014 I even did a full day workshop in _advanced search techniques_ for the Norwegian Tax Authorities.
 
-Things I could talk about include: Gatsby, React, @raae/gatsby-remark-oembed, Building MVPs in record time, web apps vs. native apps, structured content, the oembed protocol and more.
+Topics I have knowledge about include: Apps (both native, hybrid and web), the JAMStack (Gatsby - Netlify - Stripe), Creating an open source project, Building MVPs in record time, Structured content, Learning through side projects and the oEmbed protocol.
 
-I am having a hard time coming up with talk angles, so if you are in need of a talk on one of these topics [let med know](mailto://raae@raae.codes) and we could brainstorm together.
+If you need someone to give a talk or conduct a workshop on any of these topics [let me know](mailto://raae@raae.codes).
 
 - [Mobile Era 2017 Recording](https://vimeo.com/240808361)
 - [Smidigkonferansen 2013 Recording](https://vimeo.com/78634060)
