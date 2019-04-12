@@ -45,6 +45,15 @@ module.exports = {
         icon: `content/assets/avatar.jpg`
       }
     },
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-plugin-fathom",
+      options: {
+        // your Fathom server URL
+        trackingUrl: "raae.usesfathom.com",
+        // unique site id (optional, required for Fathom v1.1.0+)
+        siteId: "SALDPLQV"
+      }
+    }
   ]
 };
