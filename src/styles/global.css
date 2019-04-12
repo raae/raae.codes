@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  background: floralwhite;
+  color: hsla(0, 0%, 0%, 0.8);
+  font-family: Helvetica, sans-serif;
+  border-top: 5px solid orangered;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  transition: all 0.1s ease-in-out;
+  font-weight: bold;
+}
+
+a:hover {
+  color: orangered;
+  border-color: orangered !important;
+  transition: all 0.3s ease-in-out;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin-top: 10vh;
+}
+
+p {
+  line-height: 1.5;
+}
+
+ol,
+ul {
+  line-height: 1.3;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+blockquote {
+  border-left: 3px solid orange;
+  margin-left: 0;
+  padding: 1px 2em;
+}
+
+.Layout > header,
+.Layout > aside,
+.Layout > main {
+  max-width: 32em;
+  margin: 10vh auto;
+  padding: 0 1em;
+}
+
+.Layout > footer {
+  width: 100vw;
+  border: 5px solid darkorange;
+}
+
+.Layout.isIndexPage > *:first-child {
+  margin-top: 20vh;
+}
+
+.Layout.isIndexPage main ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Layout.isIndexPage main li {
+  display: inline-block;
+  font-size: 0.75em;
+  margin-right: 0.3em;
+}
+
+.Layout.isIndexPage main li a {
+  border: 3px solid darkorange;
+  padding: 0.3em 0.5em;
+  text-decoration: none;
+}
+
+.Logo {
+  display: inline-flex;
+  align-items: center;
+  color: orangered;
+  text-decoration: none;
+}
+
+.Logo > .avatar {
+  height: 2.5rem;
+  outline: 5px solid darkorange;
+}
+
+.Logo > .text {
+  margin: 0;
+  padding: 0.25em 1em;
+  font-size: 1.5rem;
+
+  border: 5px solid darkorange;
+  transition: all 0.3s ease-in-out;
+}
+
+a.Logo:hover > .text {
+  border-color: orangered;
+  transition: all 0.3s ease-in-out;
+}
+
+.Logo.isSmall > .text {
+  font-size: 1rem;
+  border-width: 3px;
+}

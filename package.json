@@ -1,0 +1,44 @@
+{
+  "name": "raaecodes",
+  "description": "The interwebz home of developer Benedicte Raae (@raae)",
+  "version": "0.1.0",
+  "author": "Benedicte Raae <raae@raae.codes>",
+  "bugs": {
+    "url": "https://github.com/raae/raae.codes/issues"
+  },
+  "dependencies": {
+    "classnames": "2.2.6",
+    "gatsby": "^2.1.37",
+    "gatsby-image": "^2.0.34",
+    "gatsby-plugin-manifest": "^2.0.24",
+    "gatsby-plugin-react-helmet": "^3.0.10",
+    "gatsby-plugin-sharp": "^2.0.29",
+    "gatsby-source-filesystem": "^2.0.27",
+    "gatsby-transformer-remark": "^2.3.5",
+    "gatsby-transformer-sharp": "^2.1.17",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.16.4"
+  },
+  "homepage": "https://raae.codes",
+  "keywords": [
+    "gatsbyjs"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raae/raae.codes.git"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  }
+}
