@@ -52,4 +52,4 @@ I am available for long term 60% contracts from the fall of 2020, preferably as 
 
 ## Let's be Interwebz friends
 
-You can find me on [Twitter](https://twitter.com/raae), [Instagram](https://instagram.com/raae.codes) and [GitHub](https://github.com/raae) and my email is [raae@raae.codes](mailto:raae@raae.codes).
+You can find me on [Twitter](https://twitter.com/raae), [Instagram](https://instagram.com/raae.codes) and [GitHub](https://github.com/raae). My email is [raae@raae.codes](mailto:raae@raae.codes) and you can even sign up for my [newsletter](https://tinyletter.com/raae).
