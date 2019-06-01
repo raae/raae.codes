@@ -4,7 +4,7 @@ title: index
 
 # Hello there,
 
-I create practical and robust **web apps**.
+I create robust **web apps** and **Gatsby plugins**.
 
 Roughly half the year I work as an **independent contractor**. The rest of my time I spend on **family**, **learning** and **open source**.
 
@@ -25,14 +25,17 @@ The project is a plugin for GatsbyJS that lets you embed content from Twitter, C
 
 ## Speaking
 
-In 2019 I would like to get serious about speaking!
+In 2019 I <del>would like to get</del> have gotten serious about speaking!
 
-I have spoken at several meetups and done two conference lightning talks in Oslo over the years. In 2014 I even did a full day workshop in _advanced search techniques_ for the Norwegian Tax Authorities.
+This fall I will be speaking at [Javazone](https://2019.javazone.no/) and [JSConf Budapest](https://jsconfbp.com/speakers/benedicte_raae/). The talk is titled "A privacy first web based period tracker? Is it even possible?". You can [follow my journey there](https://twitter.com/i/moments/1130526382541479936) on Twitter. I do a live broadcast every Monday.
+
+At the end of May I was a guest on [Gatsby's webinar about plugins](https://youtu.be/QIhrbJcqKu4?t=1631). I talked about my experience creating @raae/gatsby-remark-oembed.
 
 Topics I have knowledge about include: Apps (both native, hybrid and web), the JAMStack (Gatsby - Netlify - Stripe), Creating an open source project, Building MVPs in record time, Structured content, Learning through side projects and the oEmbed protocol.
 
 If you need someone to give a talk or conduct a workshop on any of these topics [let me know](mailto://raae@raae.codes).
 
+- [Gatsby Webinar Recording](https://youtu.be/QIhrbJcqKu4?t=1631)
 - [Mobile Era 2017 Recording](https://vimeo.com/240808361)
 - [Smidigkonferansen 2013 Recording](https://vimeo.com/78634060)
 
@@ -52,4 +55,6 @@ I am available for long term 60% contracts from the fall of 2020, preferably as 
 
 ## Let's be Interwebz friends
 
-You can find me on [Twitter](https://twitter.com/raae), [Instagram](https://instagram.com/raae.codes) and [GitHub](https://github.com/raae). My email is [raae@raae.codes](mailto:raae@raae.codes) and you can even sign up for my [newsletter](https://tinyletter.com/raae).
+You can find me on [Twitter](https://twitter.com/raae), [Instagram](https://instagram.com/raae.codes) and [GitHub](https://github.com/raae).
+
+My email is [raae@raae.codes](mailto:raae@raae.codes) and you can even sign up for my [newsletter](https://tinyletter.com/raae).
