@@ -1,4 +1,5 @@
-const emoji = require('emoji-random');
+const cheerio = require('cheerio')
+const axios = require("axios")
 const addWeeks = require('date-fns/add_weeks')
 const format = require('date-fns/format')
 const Octokit = require('@octokit/rest')
@@ -22,30 +23,59 @@ const fileName = (weeksToAdd = 0) => {
   return format(date, "YYYY-MM-DD") + ".yml"
 }
 
-exports.handler = async (event, context, callback) => {
-  const randomEmoji = emoji.random();
-  let lastWeeksFileContents = "No content";
+const fetchTwitterData = async () => {
+  const data = {}
+  try{
+    const page = await axios.get("https://twitter.com/raae");
+    const $ = cheerio.load(page.data)
+    const element$ = $(".ProfileNav-item--followers .ProfileNav-value")
+    data.count = parseInt(element$.attr('data-count'), 10)
+  } catch(error) {
+    data.error = error.message
+  }
 
-  const lastWeeksFileName = fileName(-1);
-  const thisWeeksFileName = fileName();
+  return data;
+}
 
-
+const fetchLastWeeksData = async () => {
   try {
     const {data} = await octokit.repos.getContents({
       ...PARAMS,
-      path: lastWeeksFileName
+      path: fileName(-1)
     });
-    lastWeeksFileContents = Buffer.from(data.content, data.encoding).toString();
+    return Buffer.from(data.content, data.encoding).toString();
   } catch (error) {
     /// Silence
-
+    return "Last week: No content";
   }
+}
+
+const fetchThisWeeksData = async () => {
+  const data = {
+    twitter: await fetchTwitterData()
+  }
+
+  return data;
+
+}
+
+const generateThisWeeksContent = (lastWeeksData, thisWeeksData) => {
+  return JSON.stringify(thisWeeksData, null, 2)
+}
+
+exports.handler = async (event, context, callback) => {
+  const thisWeeksFileName = fileName();
+  const lastWeeksData = await fetchLastWeeksData();
+  const thisWeeksData = await fetchThisWeeksData();
+  const content = generateThisWeeksContent(lastWeeksData, thisWeeksData);
+
+  console.log(content)
 
   const params = {
     ...PARAMS,
     path: thisWeeksFileName,
-    message: "Content = " + randomEmoji + ".",
-    content: Buffer.from(lastWeeksFileContents + "\n" + randomEmoji).toString('base64')
+    message: "This weeks stats" + thisWeeksFileName + ".",
+    content: Buffer.from(content).toString('base64')
   }
 
   try {
@@ -62,8 +92,6 @@ exports.handler = async (event, context, callback) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
-      thisWeeksFileName,
-      lastWeeksFileName,
       updatedFile
     }, null, 2)
   }
