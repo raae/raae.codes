@@ -20,7 +20,7 @@ const PARAMS = {
 
 const fileName = (weeksToAdd = 0) => {
   const date = addWeeks(new Date(), weeksToAdd);
-  return format(date, "YYYY-MM-DD") + ".yml"
+  return format(date, "YYYY-MM-DD") + ".json"
 }
 
 const fetchTwitterData = async () => {
@@ -50,19 +50,6 @@ const fetchInstagramData = async () => {
   return data;
 }
 
-const fetchLastWeeksData = async () => {
-  try {
-    const {data} = await octokit.repos.getContents({
-      ...PARAMS,
-      path: fileName(-1)
-    });
-    return Buffer.from(data.content, data.encoding).toString();
-  } catch (error) {
-    /// Silence
-    return "Last week: No content";
-  }
-}
-
 const fetchThisWeeksData = async () => {
   const data = {
     twitter: await fetchTwitterData(),
@@ -70,26 +57,49 @@ const fetchThisWeeksData = async () => {
   }
 
   return data;
+}
 
+const fetchLastWeeksData = async () => {
+  try {
+    const {data} = await octokit.repos.getContents({
+      ...PARAMS,
+      path: fileName(-1)
+    });
+    const content = Buffer.from(data.content, data.encoding).toString('utf8');
+    return JSON.parse(content)
+  } catch (error) {
+    return {
+      error: error.message
+    };
+  }
 }
 
 const generateThisWeeksContent = (lastWeeksData, thisWeeksData) => {
-  return JSON.stringify(thisWeeksData, null, 2)
+  if(lastWeeksData.error) return thisWeeksData;
+
+  return {
+    twitter: {
+      count: thisWeeksData.twitter.count,
+      change: thisWeeksData.twitter.count - lastWeeksData.twitter.count
+    },
+    instagram: {
+      count: thisWeeksData.instagram.count,
+      change: thisWeeksData.instagram.count - lastWeeksData.instagram.count
+    },
+  }
 }
 
-exports.handler = async (event, context, callback) => {
+exports.handler = async () => {
   const thisWeeksFileName = fileName();
   const lastWeeksData = await fetchLastWeeksData();
   const thisWeeksData = await fetchThisWeeksData();
   const content = generateThisWeeksContent(lastWeeksData, thisWeeksData);
 
-  console.log(content)
-
   const params = {
     ...PARAMS,
     path: thisWeeksFileName,
     message: "This weeks stats" + thisWeeksFileName + ".",
-    content: Buffer.from(content).toString('base64')
+    content: Buffer.from(JSON.stringify(content, null, 2)).toString('base64')
   }
 
   try {
@@ -99,14 +109,12 @@ exports.handler = async (event, context, callback) => {
     //Silence
   }
 
-  const updatedFile = await octokit.repos.updateFile(params)
+  await octokit.repos.updateFile(params)
 
-  // const result = await octokit.repos.updateFile(params)
-  // console.log("TEST", JSON.stringify(result, null, 2))
   return {
     statusCode: 200,
     body: JSON.stringify({
-      updatedFile
+      content
     }, null, 2)
   }
 };
