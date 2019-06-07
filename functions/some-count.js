@@ -27,9 +27,22 @@ const fetchTwitterData = async () => {
   const data = {}
   try{
     const page = await axios.get("https://twitter.com/raae");
-    const $ = cheerio.load(page.data)
-    const element$ = $(".ProfileNav-item--followers .ProfileNav-value")
-    data.count = parseInt(element$.attr('data-count'), 10)
+    const $ = cheerio.load(page.data);
+    const element$ = $(".ProfileNav-item--followers .ProfileNav-value");
+    data.count = parseInt(element$.attr('data-count'), 10);
+  } catch(error) {
+    data.error = error.message
+  }
+
+  return data;
+}
+
+const fetchInstagramData = async () => {
+  const data = {}
+  try{
+    const page = await axios.get("https://www.instagram.com/raae.codes/?__a=1");
+    const json = page.data;
+    data.count = json.graphql.user.edge_followed_by.count
   } catch(error) {
     data.error = error.message
   }
@@ -52,7 +65,8 @@ const fetchLastWeeksData = async () => {
 
 const fetchThisWeeksData = async () => {
   const data = {
-    twitter: await fetchTwitterData()
+    twitter: await fetchTwitterData(),
+    instagram: await fetchInstagramData()
   }
 
   return data;
