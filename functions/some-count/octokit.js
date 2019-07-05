@@ -53,7 +53,8 @@ exports.saveContent = async (
     return {
       ...content,
       repo: process.env.REPOSITORY_URL,
-      branch: process.env.BRANCH
+      branch: process.env.BRANCH,
+      test: "TEST"
     };
   } catch (error) {
     return {
