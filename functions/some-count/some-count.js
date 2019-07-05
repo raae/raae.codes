@@ -3,25 +3,11 @@ const axios = require("axios");
 const addWeeks = require("date-fns/add_weeks");
 const format = require("date-fns/format");
 const { reduce } = require("lodash");
-const Octokit = require("@octokit/rest");
-
-const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN
-});
+const { fetchContent, saveContent } = require("./octokit");
 
 const PROFILES = {
   twitter: ["raae"],
   instagram: ["benedicteraae", "raae.codes"]
-};
-
-const OCTOKIT_PARAMS = {
-  owner: "raae",
-  repo: "octokit-tests",
-  committer: {
-    name: "some-bot",
-    email: "bot@raae.codes"
-  },
-  sha: ""
 };
 
 const fileName = (weeksToAdd = 0) => {
@@ -106,38 +92,16 @@ const fetchThisWeeksData = async (profiles = PROFILES) => {
   return deflattenData(data);
 };
 
-const fetchLastWeeksData = async (params = OCTOKIT_PARAMS) => {
-  try {
-    const { data } = await octokit.repos.getContents({
-      ...params,
-      path: fileName(-1)
-    });
-    const content = Buffer.from(data.content, data.encoding).toString("utf8");
-    return JSON.parse(content);
-  } catch (error) {
-    return {
-      error: error.message
-    };
-  }
+const fetchLastWeeksData = async () => {
+  return fetchContent({ path: fileName(-1) });
 };
 
-const saveThisWeeksContent = async (content, params = OCTOKIT_PARAMS) => {
-  const thisWeeksFileName = fileName();
-  params = {
-    ...params,
-    path: thisWeeksFileName,
-    message: "This weeks stats" + thisWeeksFileName + ".",
-    content: Buffer.from(JSON.stringify(content, null, 2)).toString("base64")
-  };
-
-  try {
-    const file = await octokit.repos.getContents(params);
-    params.sha = file.data.sha;
-  } catch (error) {
-    //Silence
-  }
-
-  return octokit.repos.createOrUpdateFile(params);
+const saveThisWeeksContent = async content => {
+  return saveContent({
+    path: fileName(),
+    message: `This weeks stats ${fileName()}.`,
+    content: content
+  });
 };
 
 const generateThisWeeksProviderContent = (lastWeeksData, thisWeeksData) => {
