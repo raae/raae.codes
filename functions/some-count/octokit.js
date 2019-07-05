@@ -50,7 +50,11 @@ exports.saveContent = async (
 
   try {
     await octokit.repos.createOrUpdateFile(params);
-    return content;
+    return {
+      ...content,
+      repo: process.env.REPOSITORY_URL,
+      branch: process.env.BRANCH
+    };
   } catch (error) {
     return {
       error: error.message
