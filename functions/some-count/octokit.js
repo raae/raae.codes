@@ -55,8 +55,7 @@ exports.saveContent = async (
       repo: "REPOSITORY_URL " + process.env.REPOSITORY_URL,
       branch: "BRANCH " + process.env.BRANCH,
       url: "URL " + process.env.URL,
-      deployUrl: "DEPLOY_URL " + process.env.DEPLOY_URL,
-      test: "TEST"
+      deployUrl: "DEPLOY_URL " + process.env.DEPLOY_URL
     };
   } catch (error) {
     return {
