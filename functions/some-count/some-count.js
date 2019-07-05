@@ -1,8 +1,7 @@
-const cheerio = require("cheerio");
-const axios = require("axios");
 const addWeeks = require("date-fns/add_weeks");
 const format = require("date-fns/format");
 const { reduce } = require("lodash");
+const { fetchProviderData } = require("./scraper");
 const { fetchContent, saveContent } = require("./octokit");
 
 const PROFILES = {
@@ -15,53 +14,7 @@ const fileName = (weeksToAdd = 0) => {
   return format(date, "YYYY-MM-DD") + ".json";
 };
 
-const fetchTwitterData = async accountName => {
-  const data = {};
-  try {
-    const page = await axios.get(`https://twitter.com/${accountName}`);
-    const $ = cheerio.load(page.data);
-    const element$ = $(".ProfileNav-item--followers .ProfileNav-value");
-    data.count = parseInt(element$.attr("data-count"), 10);
-  } catch (error) {
-    data.error = error.message;
-  }
-
-  return data;
-};
-
-const fetchInstagramData = async accountName => {
-  const data = {};
-  try {
-    const page = await axios.get(
-      `https://www.instagram.com/${accountName}/?__a=1`
-    );
-    const json = page.data;
-    data.count = json.graphql.user.edge_followed_by.count;
-  } catch (error) {
-    data.error = error.message;
-  }
-
-  return data;
-};
-
-const fetchProviderData = async ({ account, provider }) => {
-  switch (provider) {
-    case "twitter":
-      return await fetchTwitterData(account);
-
-    case "instagram":
-      return await fetchInstagramData(account);
-  }
-};
-
 const fetchThisWeeksData = async (profiles = PROFILES) => {
-  const fetchData = async ({ provider, account }) => {
-    const data = await fetchProviderData({ provider, account });
-    data.provider = provider;
-    data.account = account;
-    return data;
-  };
-
   const flattenProfiles = profiles =>
     reduce(
       profiles,
@@ -87,31 +40,28 @@ const fetchThisWeeksData = async (profiles = PROFILES) => {
       {}
     );
 
-  const promises = flattenProfiles(profiles).map(profile => fetchData(profile));
+  profiles = flattenProfiles(profiles);
+
+  const promises = profiles.map(profile => fetchProviderData(profile));
   const data = await Promise.all(promises);
   return deflattenData(data);
-};
-
-const fetchLastWeeksData = async () => {
-  return fetchContent({ path: fileName(-1) });
-};
-
-const saveThisWeeksContent = async content => {
-  return saveContent({
-    path: fileName(),
-    message: `This weeks stats ${fileName()}.`,
-    content: content
-  });
 };
 
 const generateThisWeeksProviderContent = (lastWeeksData, thisWeeksData) => {
   return reduce(
     thisWeeksData,
     (result, accountData, accountName) => {
-      result[accountName] = {
-        count: accountData.count,
-        change: accountData.count - lastWeeksData[accountName].count
-      };
+      if (lastWeeksData && lastWeeksData[accountName]) {
+        result[accountName] = {
+          count: accountData.count,
+          change: accountData.count - lastWeeksData[accountName].count
+        };
+      } else {
+        result[accountName] = {
+          count: accountData.count
+        };
+      }
+
       return result;
     },
     {}
@@ -120,8 +70,6 @@ const generateThisWeeksProviderContent = (lastWeeksData, thisWeeksData) => {
 
 const generateThisWeeksContent = (lastWeeksData, thisWeeksData) => {
   if (lastWeeksData.error) return thisWeeksData;
-
-  console.log(lastWeeksData);
 
   return reduce(
     thisWeeksData,
@@ -136,33 +84,33 @@ const generateThisWeeksContent = (lastWeeksData, thisWeeksData) => {
   );
 };
 
+const fetchLastWeeksData = async () => {
+  return fetchContent({ path: fileName(-1) });
+};
+
+const saveThisWeeksContent = async content => {
+  return saveContent({
+    path: fileName(),
+    message: `This weeks stats ${fileName()}.`,
+    content: content
+  });
+};
+
 exports.handler = async () => {
   const lastWeeksData = await fetchLastWeeksData();
   const thisWeeksData = await fetchThisWeeksData();
   const content = generateThisWeeksContent(lastWeeksData, thisWeeksData);
 
-  try {
-    await saveThisWeeksContent(content);
-    return {
-      statusCode: 200,
-      body: JSON.stringify(
-        {
-          content
-        },
-        null,
-        2
-      )
-    };
-  } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify(
-        {
-          error
-        },
-        null,
-        2
-      )
-    };
-  }
+  const result = await saveThisWeeksContent(content);
+
+  return {
+    statusCode: result.error ? 500 : 200,
+    body: JSON.stringify(
+      {
+        result
+      },
+      null,
+      2
+    )
+  };
 };
