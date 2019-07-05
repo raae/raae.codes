@@ -107,7 +107,7 @@ exports.handler = async () => {
     statusCode: result.error ? 500 : 200,
     body: JSON.stringify(
       {
-        result
+        ...result
       },
       null,
       2
