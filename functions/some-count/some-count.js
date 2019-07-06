@@ -96,12 +96,27 @@ const saveThisWeeksContent = async content => {
   });
 };
 
-exports.handler = async () => {
+const isAuthorized = ({ authorization }) => {
+  return authorization && authorization.includes(process.env.SUPER_SECRET);
+};
+
+const someCount = async () => {
   const lastWeeksData = await fetchLastWeeksData();
   const thisWeeksData = await fetchThisWeeksData();
   const content = generateThisWeeksContent(lastWeeksData, thisWeeksData);
 
-  const result = await saveThisWeeksContent(content);
+  return saveThisWeeksContent(content);
+};
+
+exports.handler = async ({ headers }) => {
+  if (!isAuthorized(headers)) {
+    return {
+      statusCode: 401,
+      body: "Unauthorized"
+    };
+  }
+
+  const result = await someCount();
 
   return {
     statusCode: result.error ? 500 : 200,
