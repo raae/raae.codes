@@ -6,16 +6,27 @@ title: index
 
 I create robust **web apps** and **Gatsby plugins**.
 
-Roughly half the year I work as an **independent contractor**. The rest of my time I spend on **family**, **learning** and **open source**.
-
-I am also trying to get back into **speaking** about tech and coding.
+Roughly half the year I work as an **independent contractor**. The rest of my time I spend on **family**, **learning**, **speaking** and **open source**.
 
 My full name is Benedicte Raae.  
 My location is Rodeløkka, Oslo, Norway.
 
+## POW! - take charge of your menstrual cycle
+
+Creating a menstrual tracker app has been in the back of my mind for years. First, because I wanted something more straightforward and flexible, then later the lack of privacy afforded by existing apps got me curious about encryption.
+
+While researching my talk, "A privacy first web-based period tracker? Is it even possible?" I came across the Blockstack framework and jumped on the opportunity to participate in their "Can't be evil"-competition.
+
+So this fall, I launched POW! in open beta.
+
+My goal is to celebrate International Women's Day (March 8th, 2020) with a robust version 1.
+
+- [POW!](https://www.usepow.app/)
+- [GitHub](https://github.com/raae/pow-app)
+
 ## @raae/gatsby-remark-oembed
 
-In the fall of 2018 I released my first and so far only open source project. Its been a blast with contribution already from Thailand, Canada and the UK.
+In the fall of 2018 I released my first open source project. Its been a blast with contribution already from Thailand, Canada and the UK.
 
 The project is a plugin for GatsbyJS that lets you embed content from Twitter, CodePen, YouTube, Instagram, SoundCloud and more using the oembed protocol.
 
