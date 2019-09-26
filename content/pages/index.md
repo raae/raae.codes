@@ -1,7 +1,3 @@
----
-title: index
----
-
 # Hello there,
 
 I create robust **web apps** and **Gatsby plugins**.
