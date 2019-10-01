@@ -6,11 +6,15 @@ In the process of researching this talk I created [POW! - take charge of your me
 
 I am aiming for a proper launch March 8th 2020 and need engaged beta user to help shape the app. If you would like to be one let me know by sending an e-mail to [pow@raae.codes](mailto:pow@raae.codes?subject=I'm in and want to beta test POW!).
 
+Also please upvote [POW! on Product Hunt](https://www.producthunt.com/). No menstruation experience needed...
+
 Check out the code on [Github](https://github.com/raae/pow-app) and the slides for the talk on [Slides.com](https://slides.com/raae/a-privacy-first-period-tracker).
 
 The graphs are made with [Whimsical](https://whimsical.com/HFpFpAZSUF5QJj2G5cmh3U).
 
 You are welcome to use any of my content, but please credit @raae if you you do :D
+
+The great 1Password Security Design Whitepaper can be found on [their resource page](https://1password.com/resources/business/).
 
 If you are interested in the framework I mentioned for privacy first apps its [Blockstack](https://blockstack.org).
 
