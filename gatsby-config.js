@@ -28,7 +28,19 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: []
+        plugins: [
+          {
+            resolve: `@raae/gatsby-remark-oembed`,
+            options: {
+              providers: {
+                // Important to exclude providers
+                // that adds js to the page.
+                // If you do not need them.
+                exclude: ["Reddit", "Instagram", "Twitter", "Flickr"]
+              }
+            }
+          }
+        ]
       }
     },
     `gatsby-plugin-sharp`,
@@ -43,6 +55,12 @@ module.exports = {
         theme_color: `orangered`,
         display: `minimal-ui`,
         icon: `content/assets/avatar.jpg`
+      }
+    },
+    {
+      resolve: `gatsby-remark-responsive-iframe`,
+      options: {
+        wrapperStyle: `margin-bottom: 1.0725rem`
       }
     },
     `gatsby-plugin-react-helmet`,
