@@ -12,7 +12,7 @@ const PageTemplate = ({ data, location }) => {
       title={post.frontmatter.title}
       description={post.excerpt}
     >
-      <article className={post.fields.slug}>
+      <article>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
     </Layout>
@@ -22,14 +22,11 @@ const PageTemplate = ({ data, location }) => {
 export default PageTemplate;
 
 export const query = graphql`
-  query PageBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query PageBySlug($id: String!) {
+    markdownRemark(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
       html
-      fields {
-        slug
-      }
       frontmatter {
         title
       }
