@@ -23,7 +23,7 @@ const Layout = ({ location, title, description, children }) => {
   return (
     <div
       className={classNames("Layout", {
-        isIndexPage
+        isIndexPage: isIndexPage(location),
       })}
     >
       {seo}
