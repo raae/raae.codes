@@ -42,9 +42,11 @@ Topics I have knowledge about include: Apps (both native, hybrid and web), the J
 
 If you need someone to give a talk or conduct a workshop on any of these topics [let me know](mailto://raae@raae.codes).
 
-- [Gatsby Webinar on YouTube](https://youtu.be/QIhrbJcqKu4?t=1631)
-- [Mobile Era 2017 on YouTube](https://youtu.be/EsLfbtzbMHI)
-- [Smidigkonferansen 2013 on Vimeo](https://vimeo.com/78634060)
+[Gatsby Webinar on YouTube](https://youtu.be/QIhrbJcqKu4?t=1631)
+
+[Mobile Era 2017 on YouTube](https://youtu.be/EsLfbtzbMHI)
+
+[Smidigkonferansen 2013 on Vimeo](https://vimeo.com/78634060)
 
 ## Client work
 

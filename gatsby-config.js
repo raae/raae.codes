@@ -7,23 +7,23 @@ module.exports = {
     social: {
       twitter: `raae`,
       instagram: `raae.codes`,
-      github: "raae"
-    }
+      github: "raae",
+    },
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/pages`,
-        name: `blog`
-      }
+        name: `blog`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
-        name: `assets`
-      }
+        name: `assets`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -36,12 +36,18 @@ module.exports = {
                 // Important to exclude providers
                 // that adds js to the page.
                 // If you do not need them.
-                exclude: ["Reddit", "Instagram", "Twitter", "Flickr"]
-              }
-            }
-          }
-        ]
-      }
+                exclude: ["Reddit", "Instagram", "Twitter", "Flickr"],
+              },
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+        ],
+      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -54,14 +60,8 @@ module.exports = {
         background_color: `floralwhite`,
         theme_color: `orangered`,
         display: `minimal-ui`,
-        icon: `content/assets/avatar.jpg`
-      }
-    },
-    {
-      resolve: `gatsby-remark-responsive-iframe`,
-      options: {
-        wrapperStyle: `margin-bottom: 1.0725rem`
-      }
+        icon: `content/assets/avatar.jpg`,
+      },
     },
     `gatsby-plugin-react-helmet`,
     {
@@ -70,8 +70,8 @@ module.exports = {
         // your Fathom server URL
         trackingUrl: "raae.usesfathom.com",
         // unique site id (optional, required for Fathom v1.1.0+)
-        siteId: "SALDPLQV"
-      }
-    }
-  ]
+        siteId: "SALDPLQV",
+      },
+    },
+  ],
 };
