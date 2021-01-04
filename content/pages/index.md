@@ -58,7 +58,7 @@ Currently I am creating a web app for Thales to help monitor and visualize tacti
 
 From the fall of 2013 to the spring of 2019 I made and maintained the Varsom app for The Norwegian Water Resources and Energy Directorate. First as a native iOS app, but later as a hybrid app on both Android and iOS.
 
-I am available for long term 60% contracts from the fall of 2020, preferably as part of a remote first team.
+I am available for long term 60% contracts from the fall of 2021, preferably as part of a remote first team.
 
 - [LinkedIn](https://www.linkedin.com/in/benedicteraae/)
 
@@ -66,4 +66,4 @@ I am available for long term 60% contracts from the fall of 2020, preferably as 
 
 You can find me on [Twitter](https://twitter.com/raae), [Instagram](https://instagram.com/raae.codes) and [GitHub](https://github.com/raae).
 
-My email is [raae@raae.codes](mailto:raae@raae.codes) and you can even sign up for my [newsletter](https://tinyletter.com/raae).
+My email is [hello@raae.codes](mailto:hello@raae.codes) and you may even sign up for my [newsletter](https://tinyletter.com/raae).
