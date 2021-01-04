@@ -2,9 +2,9 @@
 
 On yesterday's [Sunday Funday POW! Stream](https://youtu.be/-SE-FSJQQ9g) I started exploring the ConvertKit API.
 
-https://youtu.be/-SE-FSJQQ9g
+**Why?** I would like to use ConvertKIt for all my POW! emailing needs: newsletter, occatinal broadcast and some automated sequences such as a series of welcome emails.
 
-The plan is to sync my users with ConvertKit to use the latter for all my emailing needs. That would be both one-off emails as well as automated sequences.
+https://youtu.be/-SE-FSJQQ9g
 
 I chose ConvertKit mostly because of familiarity, but also because it allows me to disable tracking opens. Something I feel is the right thing to do with a focused privacy product like POW! — the privacy-first menstrual cycle journal.
 
@@ -16,17 +16,13 @@ For POW! I have chosen to create a dummy API form I will add users to. I can the
 
 If you decide to do the same, make sure to disable double opt-in for the form, so they do not get sent the typical "confirm your subscription" email.
 
-```
-const addSubscriber = async ({email, apiKey, formId}) => {
-  const endpoint = `https://api.convertkit.com/v3/forms/${formId}/subscribe`
-  const { data } = await axios.post(
-    endpoint
-    ,
-    {
-      api_key: apiKey,
-      email: email
-    }
-  );
+```js
+const addSubscriber = async ({ email, apiKey, formId }) => {
+  const endpoint = `https://api.convertkit.com/v3/forms/${formId}/subscribe`;
+  const { data } = await axios.post(endpoint, {
+    api_key: apiKey,
+    email: email,
+  });
 
   console.log("Subscriber added", data.subscription.subscriber.id);
   return data.subscription.subscriber;
@@ -44,7 +40,7 @@ Users may change their email address in the app. If I were to remove the existin
 
 Luckily the ConvertKit API has an endpoint to update existing subscribers.
 
-```
+```js
 const updateSubscriber = async ({ id, email, apiSecret }) => {
   const endpoint = `https://api.convertkit.com/v3/subscribers/${id}`;
   const data = {
