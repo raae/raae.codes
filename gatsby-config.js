@@ -30,6 +30,9 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-prismjs`,
+          },
+          {
             resolve: `@raae/gatsby-remark-oembed`,
             options: {
               providers: {
