@@ -42,9 +42,11 @@ Topics I have knowledge about include: Apps (both native, hybrid and web), the J
 
 If you need someone to give a talk or conduct a workshop on any of these topics [let me know](mailto://raae@raae.codes).
 
-- [Gatsby Webinar Recording](https://youtu.be/QIhrbJcqKu4?t=1631)
-- [Mobile Era 2017 Recording](https://vimeo.com/240808361)
-- [Smidigkonferansen 2013 Recording](https://vimeo.com/78634060)
+[Gatsby Webinar on YouTube](https://youtu.be/QIhrbJcqKu4?t=1631)
+
+[Mobile Era 2017 on YouTube](https://youtu.be/EsLfbtzbMHI)
+
+[Smidigkonferansen 2013 on Vimeo](https://vimeo.com/78634060)
 
 ## Client work
 
@@ -56,7 +58,7 @@ Currently I am creating a web app for Thales to help monitor and visualize tacti
 
 From the fall of 2013 to the spring of 2019 I made and maintained the Varsom app for The Norwegian Water Resources and Energy Directorate. First as a native iOS app, but later as a hybrid app on both Android and iOS.
 
-I am available for long term 60% contracts from the fall of 2020, preferably as part of a remote first team.
+I am available for long term 60% contracts from the fall of 2021, preferably as part of a remote first team.
 
 - [LinkedIn](https://www.linkedin.com/in/benedicteraae/)
 
@@ -64,4 +66,4 @@ I am available for long term 60% contracts from the fall of 2020, preferably as 
 
 You can find me on [Twitter](https://twitter.com/raae), [Instagram](https://instagram.com/raae.codes) and [GitHub](https://github.com/raae).
 
-My email is [raae@raae.codes](mailto:raae@raae.codes) and you can even sign up for my [newsletter](https://tinyletter.com/raae).
+My email is [hello@raae.codes](mailto:hello@raae.codes) and you may even sign up for my [newsletter](https://tinyletter.com/raae).
