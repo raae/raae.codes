@@ -68,12 +68,10 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     {
-      resolve: "gatsby-plugin-fathom",
+      resolve: "@raae/gatsby-plugin-fathom",
       options: {
-        // your Fathom server URL
-        trackingUrl: "raae.usesfathom.com",
-        // unique site id (optional, required for Fathom v1.1.0+)
-        siteId: "SALDPLQV",
+        site: "SALDPLQV",
+        includedDomains: "raae.codes",
       },
     },
   ],

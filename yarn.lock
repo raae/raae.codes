@@ -1611,6 +1611,11 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
+"@raae/gatsby-plugin-fathom@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@raae/gatsby-plugin-fathom/-/gatsby-plugin-fathom-0.0.1.tgz#48ae6a99115272f5e5f67176cb1902bebfe25ade"
+  integrity sha512-suOf4n2iYuH3VAW4oZ3xwIJjMdFsE+0ZsVVrPUB7qQCmmHDzhDc4e/tyY0Lj5joU2KsQTXxBtQTbcTahmNLHUA==
+
 "@raae/gatsby-remark-oembed@0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@raae/gatsby-remark-oembed/-/gatsby-remark-oembed-0.1.1.tgz#50b72bb3042058ae1a8e8c3cf8a5de0ffdae047a"

@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@octokit/rest": "18.0.12",
+    "@raae/gatsby-plugin-fathom": "0.0.1",
     "@raae/gatsby-remark-oembed": "0.1.1",
     "axios": "0.21.1",
     "cheerio": "1.0.0-rc.5",
