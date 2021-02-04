@@ -71,7 +71,7 @@ module.exports = {
       resolve: "@raae/gatsby-plugin-fathom",
       options: {
         site: "SALDPLQV",
-        // includedDomains: "raae.codes",
+        includedDomains: "deploy-preview-8--raaecodes.netlify.app",
       },
     },
   ],
