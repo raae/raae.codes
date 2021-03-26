@@ -3,8 +3,8 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 
-import Layout from "../components/layout";
-import Logo from "../components/logo";
+import Layout from "../../components/layout";
+import Logo from "../../components/logo";
 
 const mxdComponents = {
   Logo,
