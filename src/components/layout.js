@@ -1,37 +1,36 @@
 import React from "react";
 import { Link } from "gatsby";
-import classNames from "classnames";
+import { Container, Flex, Box } from "theme-ui";
+
 import SEO from "./seo";
-import Logo from "./logo";
 import Cover from "./cover";
-import { isIndexPage } from "../utils";
+import { Avatar } from "./avatar";
 
-const Layout = ({ location, title, description, children }) => {
-  const seo = isIndexPage(location) ? (
-    <SEO />
-  ) : (
-    <SEO title={title} description={description} />
-  );
-  const header = isIndexPage(location) ? (
-    <Logo />
-  ) : (
-    <Logo to={`/`} component={Link} variant="small" />
-  );
-
+export const Layout = ({ title, description, children }) => {
   const cover = <Cover />;
 
   return (
-    <div
-      className={classNames("Layout", {
-        isIndexPage: isIndexPage(location),
-      })}
-    >
-      {seo}
-      <header>{header}</header>
-      <main>{children}</main>
-      <footer>{cover}</footer>
-    </div>
+    <>
+      <SEO title={title} description={description} />
+      <Flex
+        as="header"
+        sx={{
+          zIndex: 1000,
+          position: "fixed",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "10vw",
+          height: "10vw",
+          right: "0",
+          top: "0",
+          borderBottomLeftRadius: "50%",
+          backgroundColor: "background",
+        }}
+      >
+        <Avatar as={Link} to="/" sx={{ width: "7vw", height: "7vw" }} />
+      </Flex>
+      <Container as="main">{children}</Container>
+      <Box>{cover}</Box>
+    </>
   );
 };
-
-export default Layout;

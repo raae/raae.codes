@@ -4,9 +4,9 @@ On yesterday's [Sunday Funday POW! Stream](https://youtu.be/-SE-FSJQQ9g) I start
 
 **Why?** I would like to use ConvertKIt for all my POW! emailing needs: newsletter, occatinal broadcast and some automated sequences such as a series of welcome emails.
 
-https://youtu.be/-SE-FSJQQ9g
-
 I chose ConvertKit mostly because of familiarity, but also because it allows me to disable tracking opens. Something I feel is the right thing to do with a focused privacy product like POW! — the privacy-first menstrual cycle journal.
+
+https://youtu.be/-SE-FSJQQ9g
 
 ## Adding subscribers
 
