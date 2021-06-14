@@ -1,4 +1,4 @@
-# Notes on programmatically adding and updating ConvertKit subscribers via the API
+# ConvertKit API - programmatically adding and updating subscribers
 
 On yesterday's [Sunday Funday POW! Stream](https://youtu.be/-SE-FSJQQ9g) I started exploring the ConvertKit API.
 
