@@ -1,0 +1,26 @@
+.root {
+  --blur: 10px;
+  --spacing: 10px;
+  --color: #ff4500;
+}
+
+.root img {
+  margin-top: 2em;
+  filter: blur(var(--blur));
+  padding: var(--spacing);
+  background: var(--color);
+}
+
+.root label {
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+.root input {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.hl {
+  color: var(--color);
+}
