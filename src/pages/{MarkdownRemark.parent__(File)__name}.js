@@ -3,12 +3,12 @@ import { graphql } from "gatsby";
 import { BaseStyles } from "theme-ui";
 import { Layout } from "../components/layout";
 
-const PageTemplate = ({ data, path }) => {
+const PageTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
 
   return (
     <Layout
-      variant={path === "/" ? "root" : "article"}
+      variant={location.pathname === "/" ? "root" : "article"}
       title={post.frontmatter.title}
       description={post.excerpt}
     >
