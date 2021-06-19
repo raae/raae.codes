@@ -18,14 +18,12 @@ export default {
     "32rem",
     "64rem",
   ],
-  sizes: {
-    body: "50ch",
-    heading: "20ch",
-  },
   fonts: {
     body:
       'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: "inherit",
+    display:
+      'Shrikhand, Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;',
     monospace: "Menlo, monospace",
   },
   fontSizes: [
@@ -33,49 +31,62 @@ export default {
     "0.64rem",
     "0.8rem",
     "1rem",
-    "1.25rem",
-    "1.563rem",
-    "1.953rem",
-    "2.441rem",
-    "3.052rem",
+    "calc(100% + 0.5vw)",
+    "calc(110% + 0.75vw)",
+    "calc(120% + 1vw)",
+    "calc(130% + 1.5vw)",
   ],
   fontWeights: {
     body: 400,
     heading: 900,
+    display: 900,
     bold: 700,
   },
   lineHeights: {
     body: 1.5,
     heading: 1.125,
+    display: 0.9,
+  },
+  sizes: {
+    body: "50ch",
+    main: "80ch",
   },
   colors: colors,
-  container: {
-    marginTop: "8vw",
-    marginBottom: "8vw",
-    marginLeft: "10vw",
-    maxWidth: "calc(100vw - 25vw)",
+  layout: {
+    main: {
+      marginTop: "10vmax",
+      marginBottom: "10vmax",
+      padding: "0 5vw",
+      maxWidth: "main",
+      overflowX: "hidden",
+    },
   },
   styles: {
     root: {
+      "@font-face": {
+        fontFamily: "Shrikhand",
+        src: `url("/fonts/shrikhand/Shrikhand-Regular.otf")`,
+      },
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
-      fontSize: "125%",
+      fontSize: "calc(112.5% + 0.25vw)",
     },
     h1: {
       color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      maxWidth: "heading",
       fontSize: 7,
-      letterSpacing: "0.035em",
       "&:first-child": {
         "-webkit-text-fill-color": colors.secondary,
-        "-webkit-text-stroke-width": "0.035em",
+        "-webkit-text-stroke-width": "0.003em",
         "-webkit-text-stroke-color": colors.primary,
-        fontSize: 8,
-        marginBottom: 4,
+        fontFamily: "display",
+        lineHeight: "display",
+        fontWeight: "display",
+        fontSize: "calc(150% + 2vw)",
+        marginBottom: 5,
       },
     },
     h2: {
@@ -83,7 +94,6 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      maxWidth: "heading",
       fontSize: 6,
       marginTop: 5,
     },
@@ -92,7 +102,6 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      maxWidth: "heading",
       fontSize: 5,
     },
     h4: {
@@ -100,7 +109,6 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      maxWidth: "heading",
       fontSize: 4,
     },
     h5: {
@@ -108,7 +116,6 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      maxWidth: "heading",
       fontSize: 3,
     },
     h6: {
@@ -116,7 +123,6 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      maxWidth: "heading",
       fontSize: 2,
     },
     p: {
@@ -136,23 +142,6 @@ export default {
         color: "inherit",
       },
     },
-    code: {
-      fontFamily: "monospace",
-      fontSize: "inherit",
-    },
-    table: {
-      width: "100%",
-      borderCollapse: "separate",
-      borderSpacing: 0,
-    },
-    th: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
-    },
-    td: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
-    },
     img: {
       maxWidth: "100%",
       marginTop: 3,
@@ -166,15 +155,16 @@ export default {
       marginBottom: 5,
     },
     ".gatsby-resp-iframe-wrapper": {
-      maxWidth: "100%",
       borderStyle: "solid",
-      borderWidth: "2vw",
+      borderWidth: "3vw",
+      borderTopWidth: "max(3vw, 5vh)",
+      borderBottomWidth: "max(3vw, 5vh)",
       borderColor: "secondary",
       borderRadius: "0.5vw",
       marginTop: 4,
       marginBottom: 4,
-      marginLeft: "-1.5vw",
-      marginRight: "-1.5vw",
+      marginLeft: "-5.5vw",
+      marginRight: "-5.5vw",
     },
   },
 };

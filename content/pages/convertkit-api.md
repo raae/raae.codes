@@ -1,4 +1,4 @@
-# ConvertKit API - programmatically adding and updating subscribers
+# ConvertKit API —&nbsp;programmatically adding and updating subscribers
 
 On yesterday's [Sunday Funday POW! Stream](https://youtu.be/-SE-FSJQQ9g) I started exploring the ConvertKit API.
 
@@ -8,7 +8,7 @@ I chose ConvertKit mostly because of familiarity, but also because it allows me 
 
 https://youtu.be/-SE-FSJQQ9g
 
-## Adding subscribers
+## Adding subscribers programmatically
 
 ConvertKit does not allow you to add subscribers without adding them to either a Form, Sequence, or Tag. This also holds true for the ConvertKit API. Therefore you will not find an add subscriber endpoint when looking under subscribers in the [API docs](https://developers.convertkit.com/).
 
