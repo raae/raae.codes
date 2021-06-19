@@ -23,7 +23,7 @@ export default {
       'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: "inherit",
     display:
-      'Shrikhand, Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;',
+      '"Shrikhand", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;',
     monospace: "Menlo, monospace",
   },
   fontSizes: [
@@ -65,6 +65,7 @@ export default {
     root: {
       "@font-face": {
         fontFamily: "Shrikhand",
+        fontDisplay: "swap",
         src: `url("/fonts/shrikhand/Shrikhand-Regular.otf")`,
       },
       fontFamily: "body",
