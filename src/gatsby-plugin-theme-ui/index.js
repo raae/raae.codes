@@ -65,7 +65,7 @@ export default {
     root: {
       "@font-face": {
         fontFamily: "Shrikhand",
-        fontDisplay: "optional",
+        fontDisplay: "block",
         src: `url("/fonts/shrikhand/Shrikhand-Regular.otf")`,
       },
       fontFamily: "body",
