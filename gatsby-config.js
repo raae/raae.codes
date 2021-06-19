@@ -12,6 +12,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-plugin-theme-ui",
+      options: {
+        prismPreset: "night-owl",
+      },
+    },
+    "gatsby-theme-style-guide",
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/pages`,
@@ -45,9 +52,6 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
           },
         ],
       },

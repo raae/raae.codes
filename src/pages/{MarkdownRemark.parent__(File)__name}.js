@@ -1,19 +1,21 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-import Layout from "../components/layout";
+import { BaseStyles } from "theme-ui";
+import { Layout } from "../components/layout";
 
 const PageTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
 
   return (
     <Layout
-      location={location}
+      variant={location.pathname === "/" ? "root" : "article"}
       title={post.frontmatter.title}
       description={post.excerpt}
     >
       <article>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <BaseStyles
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        ></BaseStyles>
       </article>
     </Layout>
   );
