@@ -40,7 +40,9 @@ export default {
     body: 400,
     heading: 900,
     display: 900,
-    bold: 700,
+    medium: 600,
+    bold: 800,
+    thick: 900,
   },
   lineHeights: {
     body: 1.5,
@@ -135,6 +137,13 @@ export default {
     },
     a: {
       color: "primary",
+      fontWeight: "medium",
+      borderRadius: "3px",
+      padding: "0.1em 0.3em",
+      "&:hover": {
+        backgroundColor: "secondary",
+        textDecoration: "none",
+      },
     },
     pre: {
       fontFamily: "monospace",
@@ -154,6 +163,8 @@ export default {
       opacity: "0.7",
       marginTop: 5,
       marginBottom: 5,
+      maxWidth: "body",
+      marginLeft: 0,
     },
     ".gatsby-resp-iframe-wrapper": {
       borderStyle: "solid",
