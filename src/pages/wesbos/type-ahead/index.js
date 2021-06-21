@@ -55,13 +55,16 @@ const TypeAheadPage = () => {
           ) : (
             <>
               {matches.map((place) => {
+                const regex = new RegExp(`(${wordToMatch})`, "ig");
+                const cityName = place.city.replace(regex, `<em>$1</em>`);
+                const placeName = place.state.replace(regex, `<em>$1</em>`);
                 return (
-                  <li key={`${place.city}-${place.state}`}>
-                    <span>
-                      {place.city}, {place.state}
-                    </span>
-                    <span>{place.population}</span>
-                  </li>
+                  <li
+                    key={`${place.city}-${place.state}`}
+                    dangerouslySetInnerHTML={{
+                      __html: `<span>${cityName}, ${placeName}</span><span>${place.population}</span>`,
+                    }}
+                  ></li>
                 );
               })}
             </>
