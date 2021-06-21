@@ -1,14 +1,14 @@
-# Notes on programmatically adding and updating ConvertKit subscribers via the API
+# ConvertKit API —&nbsp;programmatically adding and updating subscribers
 
 On yesterday's [Sunday Funday POW! Stream](https://youtu.be/-SE-FSJQQ9g) I started exploring the ConvertKit API.
 
 **Why?** I would like to use ConvertKIt for all my POW! emailing needs: newsletter, occatinal broadcast and some automated sequences such as a series of welcome emails.
 
-https://youtu.be/-SE-FSJQQ9g
-
 I chose ConvertKit mostly because of familiarity, but also because it allows me to disable tracking opens. Something I feel is the right thing to do with a focused privacy product like POW! — the privacy-first menstrual cycle journal.
 
-## Adding subscribers
+https://youtu.be/-SE-FSJQQ9g
+
+## Adding subscribers programmatically
 
 ConvertKit does not allow you to add subscribers without adding them to either a Form, Sequence, or Tag. This also holds true for the ConvertKit API. Therefore you will not find an add subscriber endpoint when looking under subscribers in the [API docs](https://developers.convertkit.com/).
 

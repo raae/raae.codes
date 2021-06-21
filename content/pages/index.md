@@ -1,11 +1,20 @@
 # Hello there,
 
-I create robust **web apps** and **Gatsby plugins**.
+Welcome to my little corner of the Interwebz 👋
 
-Roughly half the year I work as an **independent contractor**. The rest of my time I spend on **family**, **learning**, **speaking** and **open source**.
+Are you looking for [#GatsbySummerFunctions](https://queen.raae.codes) · [**POW!** —&nbsp;the privacy-first menstrual cycle journal](https://www.usepow.app/) · [Gatsby Deep Dives](https://nattermob.dev) · [The podcast I co-host](https://www.slowandsteadypodcast.com/) or [my vlogs](https://www.youtube.com/playlist?list=PL9W-8hhRoLoOuWuMhtuaHXOSY1mMyYKYW)?
 
-My full name is Benedicte Raae.  
-My location is Rodeløkka, Oslo, Norway.
+**No?** Feel free to contact me on [hey@raae.codes](mailto://hey@raae.codes).
+
+**Who am I?** My name is Benedicte Raae. You might know me as [@raae](http://twitter.com/raae) or [Queen Raae](https://nattermob.dev). I am a senior developer, indie hacker and mom from Oslo, Norway&nbsp;🇳🇴
+
+---
+
+Keep updated on _all the things_ by signing up for [my weekly updates](https://lillylabs.ck.page/17c78534ba). You may also join [Queen Raae's Gatsby Newsletter](https://lillylabs.ck.page/9dfb2f4345) or the [POW! Newsletter](https://www.usepow.app/newsletter).
+
+---
+
+<small>In the process of updating Summer 2021&hellip;</small>
 
 ## POW! - take charge of your menstrual cycle
 
