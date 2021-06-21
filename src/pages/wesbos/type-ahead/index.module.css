@@ -1,4 +1,8 @@
 .root {
+  text-align: center;
+}
+
+.root form {
   max-width: 400px;
   margin: 50px auto;
 }
