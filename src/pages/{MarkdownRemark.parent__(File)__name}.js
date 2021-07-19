@@ -1,7 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { BaseStyles } from "theme-ui";
+import { BaseStyles, Divider } from "theme-ui";
 import { Layout } from "../components/layout";
+import { Newsletter } from "../components/newsletter";
 
 const PageTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
@@ -17,6 +18,8 @@ const PageTemplate = ({ data, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
         ></BaseStyles>
       </article>
+      <Divider />
+      <Newsletter />
     </Layout>
   );
 };

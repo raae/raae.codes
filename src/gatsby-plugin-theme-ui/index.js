@@ -19,8 +19,7 @@ const theme = {
     "64rem",
   ],
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: "inherit",
     display:
       '"Shrikhand", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
@@ -61,6 +60,46 @@ const theme = {
       padding: "0 5vw",
       maxWidth: "main",
       overflowX: "hidden",
+    },
+  },
+  buttons: {
+    primary: {
+      backgroundColor: "transparent",
+      borderColor: "primary",
+      borderStyle: "solid",
+      borderWidth: "2px",
+      transition: ".2s linear all",
+      color: "primary",
+      fontWeight: "bold",
+      "&:hover": {
+        opacity: 0.8,
+        backgroundColor: "primary",
+        color: "white",
+      },
+      "&:active": {
+        borderColor: "transparent",
+      },
+      "&:disabled": {
+        cursor: "not-allowed",
+        opacity: 0.5,
+      },
+    },
+  },
+  forms: {
+    label: {
+      fontSize: 2,
+      fontWeight: "bold",
+    },
+    input: {
+      borderColor: "text",
+      borderWidth: "2px",
+      "&:focus": {
+        borderColor: "primary",
+        outline: "none",
+      },
+    },
+    checkbox: {
+      color: "text",
     },
   },
   styles: {
