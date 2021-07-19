@@ -5,7 +5,7 @@ const colors = {
   secondary: "#ffde59",
 };
 
-export default {
+const theme = {
   space: [
     "0rem",
     "0.25rem",
@@ -181,3 +181,5 @@ export default {
     },
   },
 };
+
+export default theme;

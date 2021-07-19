@@ -67,7 +67,7 @@ const CssVariablesPage = ({ location }) => {
         <h2>
           Update CSS Variables with <span className={style.hl}>JS</span>
         </h2>
-        <div className={style.controls}>
+        <div>
           <label htmlFor="spacing">Spacing:</label>
           <input
             id="spacing"

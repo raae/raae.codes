@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { Container, Flex, Box } from "theme-ui";
 
-import SEO from "./seo";
+import Seo from "./seo";
 import Cover from "./cover";
 import { Avatar } from "./avatar";
 
@@ -11,7 +11,7 @@ export const Layout = ({ title, variant, description, children }) => {
 
   return (
     <>
-      <SEO title={title} description={description} />
+      <Seo title={title} description={description} />
       {variant !== "root" && (
         <Flex
           as="header"
