@@ -7,7 +7,12 @@ export default async function corsHandler(req, res) {
       .update(req.ip + process.env.IP_HASH_SALT)
       .digest("hex");
 
-    res.json({ ip: req.ip, hash: ipHashWithSalt });
+    res.json({
+      ip: req.ip,
+      ip2: req.ipAddress,
+      headers: req.headers,
+      hash: ipHashWithSalt,
+    });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
