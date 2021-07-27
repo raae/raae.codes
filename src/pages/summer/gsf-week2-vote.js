@@ -10,8 +10,8 @@ const SummerFunctionWeek2 = () => {
     event.preventDefault();
     setState({ status: "pending", message: "..." });
     try {
-      await axios.post(event.target.action);
-      setState({ status: "fulfilled", message: "YEAH" });
+      const { data } = await axios.post(event.target.action);
+      setState({ status: "fulfilled", message: JSON.stringify(data) });
     } catch (error) {
       setState({ status: "failed", message: error.message });
     }

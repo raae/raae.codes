@@ -50,5 +50,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "devDependencies": {
+    "@netlify/plugin-gatsby": "1.0.3"
   }
 }
