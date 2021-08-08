@@ -7,7 +7,3 @@ Are you looking for [#GatsbySummerFunctions](https://queen.raae.codes) · [**POW
 **No?** Feel free to contact me on [hey@raae.codes](mailto://hey@raae.codes).
 
 **Who am I?** My name is Benedicte Raae. You might know me as [@raae](http://twitter.com/raae) or [Queen Raae](https://nattermob.dev). I am a senior developer, indie hacker and mom from Oslo, Norway&nbsp;🇳🇴
-
----
-
-Keep updated on _all the things_ by signing up for [my weekly updates](https://lillylabs.ck.page/17c78534ba). You may also join [Queen Raae's Gatsby Newsletter](https://lillylabs.ck.page/9dfb2f4345) or the [POW! Newsletter](https://www.usepow.app/newsletter).
