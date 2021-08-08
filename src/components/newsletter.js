@@ -1,14 +1,28 @@
+import axios from "axios";
 import React, { useState } from "react";
-import { Box, Grid, Button, Label, Input, Checkbox, Paragraph } from "theme-ui";
+import {
+  Box,
+  Grid,
+  Button,
+  Label,
+  Input,
+  Checkbox,
+  Paragraph,
+  Text,
+} from "theme-ui";
+
+const DEFAULT_SUBSCRIBER = { name: "", email: "" };
+const DEFAULT_SUBSCRIPTIONS = {
+  gatsby: false,
+  pow: false,
+  lilly: false,
+};
 
 export const Newsletter = () => {
-  const [subscriptions, setSubscriptions] = useState({
-    gatsby: false,
-    pow: false,
-    lilly: false,
-  });
+  const [subscriptions, setSubscriptions] = useState(DEFAULT_SUBSCRIPTIONS);
+  const [subscriber, setSubscriber] = useState(DEFAULT_SUBSCRIBER);
 
-  const [subscriber, setSubscriber] = useState({ name: "", email: "" });
+  const [status, setStatus] = useState("INITIAL");
 
   const handleOnSubscriptionsChange = (name) => (event) => {
     setSubscriptions((current) => {
@@ -30,12 +44,29 @@ export const Newsletter = () => {
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
-    console.log("submit", { subscriber, subscriptions });
+    setStatus("PENDING");
+
+    try {
+      await axios.post("/api/newsletter", {
+        subscriber,
+        subscriptions: Object.keys(subscriptions).filter(
+          (key) => subscriptions[key]
+        ),
+      });
+      setSubscriber(DEFAULT_SUBSCRIBER);
+      setSubscriptions(DEFAULT_SUBSCRIPTIONS);
+      setStatus("FULFILLED");
+    } catch (error) {
+      console.warn(error);
+      setStatus("FAILED");
+    }
   };
 
   const atLeastOneSubscription = Object.keys(subscriptions).some(
     (key) => subscriptions[key]
   );
+
+  const disabled = !atLeastOneSubscription || status === "PENDING";
 
   return (
     <Grid as="form" onSubmit={handleOnSubmit} gap="1.5em">
@@ -48,7 +79,7 @@ export const Newsletter = () => {
             checked={subscriptions.gatsby}
             onChange={handleOnSubscriptionsChange("gatsby")}
           />
-          advanced Gatsby developer tips from Queen Raae (weekly)
+          emails from Queen Raae related to Gatsby (often)
         </Label>
         <Label>
           <Checkbox
@@ -74,6 +105,7 @@ export const Newsletter = () => {
           name="name"
           value={subscriber.name}
           onChange={handleOnSubscriberChange("name")}
+          disabled={disabled}
         ></Input>
       </Box>
       <Box sx={{ maxWidth: "20em" }}>
@@ -85,12 +117,18 @@ export const Newsletter = () => {
           value={subscriber.email}
           required={true}
           onChange={handleOnSubscriberChange("email")}
+          disabled={disabled}
         ></Input>
       </Box>
 
-      <Button sx={{ maxWidth: "20em" }} disabled={!atLeastOneSubscription}>
+      <Button sx={{ maxWidth: "20em" }} disabled={disabled}>
         Subscribe
       </Button>
+      <Text>
+        {status === "PENDING" && <>Hold on...</>}
+        {status === "FULFILLED" && <>Check your inbox to confirm...</>}
+        {status === "FAILED" && <>Oh no...something went wrong</>}
+      </Text>
     </Grid>
   );
 };

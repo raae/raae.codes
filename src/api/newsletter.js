@@ -27,24 +27,24 @@ const addConvertKitSubscriber = async ({ email, formId, apiKey }) => {
 //   // return data.subscription.subscriber;
 // };
 
-const subscribe = async ({ email, subscriptions }) => {
+const subscribe = async ({ subscriber, subscriptions }) => {
   const promises = subscriptions.map((subscription) => {
     switch (subscription) {
       case "lilly":
         return addConvertKitSubscriber({
-          email: email,
+          ...subscriber,
           formId: process.env.CK_FORM_ID_LILLY_LABS,
           apiKey: process.env.CK_API_KEY_LILLY_LABS,
         });
       case "gatsby":
         return addConvertKitSubscriber({
-          email: email,
+          ...subscriber,
           formId: process.env.CK_FORM_ID_GATSBY,
           apiKey: process.env.CK_API_KEY_GATSBY,
         });
       case "pow":
         return addConvertKitSubscriber({
-          email: email,
+          ...subscriber,
           formId: process.env.CK_FORM_ID_POW,
           apiKey: process.env.CK_API_KEY_POW,
         });
@@ -68,6 +68,7 @@ const subscribe = async ({ email, subscriptions }) => {
 
 export default async (req, res) => {
   try {
+    console.log(req.body);
     const result = await subscribe(req.body);
     console.log(result);
     res.status(200).json(result);
