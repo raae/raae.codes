@@ -60,8 +60,8 @@ const subscribe = async ({ subscriber, subscriptions }) => {
     return {
       subscription: subscriptions[index],
       status: result.status,
-      message: result.reason?.message,
-      id: result.value?.id,
+      message: result.reason && result.reason.message,
+      id: result.value && result.value.id,
     };
   });
 };
@@ -73,7 +73,7 @@ export default async (req, res) => {
     console.log(result);
     res.status(200).json(result);
   } catch (error) {
-    console.error({ message: error.response?.message || error.message });
+    console.error(error);
     res.status(500).json({
       message: "Something went wrong",
     });

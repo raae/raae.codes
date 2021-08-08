@@ -66,7 +66,8 @@ export const Newsletter = () => {
     (key) => subscriptions[key]
   );
 
-  const disabled = !atLeastOneSubscription || status === "PENDING";
+  const submitDisabled = !atLeastOneSubscription || status === "PENDING";
+  const inputDisabled = status === "PENDING";
 
   return (
     <Grid as="form" onSubmit={handleOnSubmit} gap="1.5em">
@@ -105,7 +106,7 @@ export const Newsletter = () => {
           name="name"
           value={subscriber.name}
           onChange={handleOnSubscriberChange("name")}
-          disabled={disabled}
+          disabled={inputDisabled}
         ></Input>
       </Box>
       <Box sx={{ maxWidth: "20em" }}>
@@ -117,11 +118,11 @@ export const Newsletter = () => {
           value={subscriber.email}
           required={true}
           onChange={handleOnSubscriberChange("email")}
-          disabled={disabled}
+          disabled={inputDisabled}
         ></Input>
       </Box>
 
-      <Button sx={{ maxWidth: "20em" }} disabled={disabled}>
+      <Button sx={{ maxWidth: "20em" }} disabled={submitDisabled}>
         Subscribe
       </Button>
       <Text>
