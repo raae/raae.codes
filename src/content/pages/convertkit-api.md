@@ -64,5 +64,3 @@ Additional notes:
 ---
 
 That's it for now. I will update these notes whenever I learn something new while working on my ConvertKit - POW! integration.
-
-Every week I send an email about life as an Indie Hacker including POW! progress reports. If that sounds interesting [sign up](https://lillylabs.ck.page/dd43ca06fe).
