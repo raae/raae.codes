@@ -24,7 +24,7 @@
     "gatsby-remark-responsive-iframe": "4.6.0",
     "gatsby-source-filesystem": "3.9.0",
     "gatsby-theme-style-guide": "0.10.0",
-    "gatsby-transformer-remark": "4.6.0",
+    "gatsby-transformer-remark": "5.25.1",
     "gatsby-transformer-sharp": "3.9.0",
     "lodash": "4.17.21",
     "prismjs": "1.24.1",
